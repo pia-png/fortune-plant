@@ -1,0 +1,146 @@
+
+
+@font-face {
+    font-family: "Willow";
+    src: url(Pia_font-Regular.otf) format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Willow", serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Willow", serif;
+
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1563714193017-5a5fb60bc02b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+}
+
+.game-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 420px;
+    z-index: 10;
+
+    min-height:520px;
+}
+
+h1 {
+    font-size: 1.2rem;
+    color: #2d5a27;
+}
+
+#plant {
+    height: 100px;
+    width: auto;
+    margin: 30px auto;
+    display: block;
+    transition: transform 0.3 ease;
+}
+
+.shake {
+    animation: shakePlant 0.4s ease;
+}
+
+@keyframes shakePlant {
+    0%, 100% { transform: rotate(0deg);}
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg);}
+}
+
+.progress-bar{
+    background-color: #e0f2e9;
+    border-radius: 10px;
+    height: 15px;
+    width: 100px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#progress {
+    background-color: #5cb85c;
+    height: 100%;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+button {
+    background-color: #4ba3e3;
+    color: white;
+    font-family: "Willow", serif;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    border: 2px solid #356ebd;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: #356ebd;
+    transform: translateY(-2px);
+}
+
+#fortune-box {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #c88123;
+}
+
+.hidden {
+    display: none;
+}
+
+#plant.flower {
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+
+.cloud {
+    position: absolute;
+    top: 15%;
+    background-image: url('assets/cloud.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 50%;
+}
+
+.cloud1 {
+    animation: float1 15s linear infinite;
+}
+
+.cloud2 {
+    top: 25%;
+    animation: float2 15s linear infinite;
+    animation-delay: -20s;
+}
+
+@keyframes float1 {
+    0% { left: -250px }
+    100% { left: 100vw }
+}
+
+@keyframes float2 {
+    0% { left: -250px }
+    100% { left: 100vw }
+}
